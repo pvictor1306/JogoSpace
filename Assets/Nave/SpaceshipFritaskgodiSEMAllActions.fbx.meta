@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ebbc155b82a0b3d47b4b6298662ee399
-timeCreated: 1491265499
+guid: ec42c490fde1aef47b5418b81fa22029
+timeCreated: 1491311736
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -47,7 +47,7 @@ ModelImporter:
       name: pulando
       takeName: Default Take
       firstFrame: 80
-      lastFrame: 110
+      lastFrame: 100
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -92,7 +92,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
