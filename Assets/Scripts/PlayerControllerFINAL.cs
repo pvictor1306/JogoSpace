@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerControllerFINAL : MonoBehaviour {
 
     public float ForcaDoPulo = 10f;
     public AudioClip somPulo;
     public AudioClip somMorte;
-
     private Animator anim;
     private Rigidbody rb;
     private AudioSource audioSource;
@@ -20,15 +20,13 @@ public class PlayerControllerFINAL : MonoBehaviour {
     }
 
     void Update() {
-        if (GameController.instancia.estado == Estado.Jogando || GameController.instancia.estado == Estado.AguardandoComecar) {
-            if (Input.GetMouseButtonDown(0)) {
+        if (GameController.instancia.estado == Estado.Jogando) {
+            if (Input.GetMouseButton(0)) {
                 anim.Play("pulando");
                 audioSource.PlayOneShot(somPulo);
                 rb.useGravity = true;
                 pulando = true;
-                if (GameController.instancia.estado == Estado.AguardandoComecar) {
-                    GameController.instancia.PlayerComecou();
-                }
+                
             }
         }
     }

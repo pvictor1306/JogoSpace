@@ -122,8 +122,8 @@ ModelImporter:
     - serializedVersion: 16
       name: aguardando
       takeName: Default Take
-      firstFrame: 0
-      lastFrame: 10
+      firstFrame: 20
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
