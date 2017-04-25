@@ -10,12 +10,10 @@ public class GosmaMove : MonoBehaviour {
     public float espera;
 
     private GameObject player;
-    private bool pontuou;
+    private bool pontuou = false;
 
-    void Start() {
-        StartCoroutine(Move(min));
-        player = GameObject.Find("SpaceshipFritaskgodiSEMAllActions");
-        pontuou = false;
+    private void Awake() {
+        player = GameObject.Find("Nave");
     }
 
     IEnumerator Move(float destino) {
@@ -26,7 +24,7 @@ public class GosmaMove : MonoBehaviour {
             if(GameController.instancia.estado == Estado.Jogando) {
                 if (!pontuou && transform.position.x < player.gameObject.transform.position.x) {
                     pontuou = true;
-                    GameController.instancia.acrescentarPontos(1);
+                    GameController.instancia.incrementarPontos(1);
                 }
             }
             yield return null;
@@ -44,6 +42,12 @@ public class GosmaMove : MonoBehaviour {
 
         Vector3 direcaoh = Vector3.left * velocidadev;
         transform.position = transform.position + direcaoh * Time.deltaTime;
+        if (!pontuou && GameController.instancia.estado == Estado.Jogando) {
+            if (transform.position.x < player.transform.position.x) {
+                GameController.instancia.incrementarPontos(1);
+                pontuou = true;
+            }
+        }
     }
 }
 
